@@ -24,7 +24,7 @@ public class AutomationPracticeForm {
 
     //todo
 //    @Test
-//    void fillFormTestXpath(){
+//    void fillFormTestXpathTest(){
 //        open("/utomation-practice-form");
 //
 //        $x("//*[@id='firstName']").scrollIntoView(true).setValue("Anatoliy");
