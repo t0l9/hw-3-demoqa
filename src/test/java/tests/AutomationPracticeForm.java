@@ -61,10 +61,7 @@ public class AutomationPracticeForm {
         $("#submit").scrollIntoView(true).click();
 
 
-//        $("#output").$("#name").shouldHave(text("Anatoliy"));
-//        $("#output #email").shouldHave(text("t0l4ik.kas1@gmail.com"));
-//        $("#output").$("#currentAddress").shouldHave(text("Almaty"));
-//        $("#output").$("#permanentAddress").shouldHave(text("saina"));
+        $(".modal-content").shouldHave(text("Thanks for submitting the form"));
 
     }
 }
