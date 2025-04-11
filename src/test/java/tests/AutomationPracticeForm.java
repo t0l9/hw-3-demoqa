@@ -22,18 +22,6 @@ public class AutomationPracticeForm {
 
     }
 
-    //todo
-//    @Test
-//    void fillFormTestXpathTest(){
-//        open("/utomation-practice-form");
-//
-//        $x("//*[@id='firstName']").scrollIntoView(true).setValue("Anatoliy");
-//        $x("//*[@id='lastName']").setValue("Kolyshkin");
-//        $x("//*[@id='userEmail']").setValue("t0l4ik.kas1@gmail.com");
-//        $$("label").findBy(text("Male")).click();
-//
-//
-//    }
 
     @Test
     void fillFormTestCssSelectorsTest(){
