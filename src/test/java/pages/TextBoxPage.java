@@ -1,12 +1,11 @@
 package pages;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CheckResultComponent;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class RegistrationSimplePage {
+public class TextBoxPage {
 
     CheckResultComponent checkResultComponent = new CheckResultComponent();
 
@@ -17,47 +16,52 @@ public class RegistrationSimplePage {
     private final SelenideElement submit = $("#submit");
 
 
-    public RegistrationSimplePage openPage(){
+    public TextBoxPage openPage(){
 
-        String pageUrl = "/text-box";
-        open(pageUrl);
+        open("/text-box");
+        return this;
+    }
+
+    public TextBoxPage removeBanners(){
+
         executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
         return this;
     }
 
-    public RegistrationSimplePage setFullName(String value){
+
+    public TextBoxPage setFullName(String value){
         userName.setValue(value);
         return this;
     }
 
-    public RegistrationSimplePage setEmail(String value){
+    public TextBoxPage setEmail(String value){
 
         userEmail.setValue(value);
         return this;
     }
 
-    public RegistrationSimplePage setAdress(String value){
+    public TextBoxPage setAdress(String value){
 
         currentAdress.setValue(value);
         return this;
     }
 
-    public RegistrationSimplePage setPermanentAdress(String value){
+    public TextBoxPage setPermanentAdress(String value){
 
         permanentAdress.setValue(value);
         return this;
     }
 
 
-    public RegistrationSimplePage pressSubmit(){
+    public TextBoxPage pressSubmit(){
 
         submit.scrollIntoView(true).click();
 
         return this;
     }
 
-    public RegistrationSimplePage checkResult(String key, String value){
+    public TextBoxPage checkResult(String key, String value){
 
         checkResultComponent.checkResultSimpleForm(key, value);
         return this;

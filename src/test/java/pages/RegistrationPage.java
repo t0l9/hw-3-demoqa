@@ -7,7 +7,6 @@ import pages.components.CheckResultComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
 
@@ -33,7 +32,13 @@ public class RegistrationPage {
     CheckResultComponent checkResultComponent = new CheckResultComponent();
 
     public RegistrationPage openPage(){
+
         open(pageUrl);
+        return this;
+    }
+
+    public RegistrationPage removebanners(){
+
         executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
         return this;

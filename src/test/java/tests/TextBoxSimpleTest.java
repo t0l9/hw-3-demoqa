@@ -2,14 +2,12 @@ package tests;
 
 
 import org.junit.jupiter.api.Test;
-import pages.RegistrationSimplePage;
+import pages.TextBoxPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
 
 public class TextBoxSimpleTest extends TestBase {
 
-    RegistrationSimplePage registrationSimplePage = new RegistrationSimplePage();
+    TextBoxPage textBoxPage = new TextBoxPage();
 
     @Test
     void fillFormTest(){
@@ -19,14 +17,15 @@ public class TextBoxSimpleTest extends TestBase {
         String userAddress = "Almaty";
         String permanentAddress = "saina";
 
-        registrationSimplePage.openPage()
+        textBoxPage.openPage()
+                .removeBanners()
                 .setFullName(fullName)
                 .setEmail(email)
                 .setAdress(userAddress)
                 .setPermanentAdress(permanentAddress)
                 .pressSubmit();
 
-        registrationSimplePage.checkResult("#name", fullName)
+        textBoxPage.checkResult("#name", fullName)
                 .checkResult("#email", email)
                 .checkResult("#currentAddress", userAddress)
                 .checkResult("#permanentAddress", permanentAddress);

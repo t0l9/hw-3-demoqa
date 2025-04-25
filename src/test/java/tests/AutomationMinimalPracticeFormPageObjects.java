@@ -17,6 +17,7 @@ public class AutomationMinimalPracticeFormPageObjects extends TestBase {
         String userNumber = "7073689896";
 
         registrationPage.openPage()
+                .removebanners()
                 .setFirstName(name)
                 .setLastName(lastName)
                 .setSex(userSex)

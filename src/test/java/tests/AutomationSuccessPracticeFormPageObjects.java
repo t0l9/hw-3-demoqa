@@ -25,6 +25,7 @@ public class AutomationSuccessPracticeFormPageObjects extends TestBase {
         String[] userDateOfBirthday = {"14", "1", "1996"};
 
         registrationPage.openPage()
+                .removebanners()
                 .setFirstName(name)
                 .setLastName(lastName)
                 .setEmail(email)
