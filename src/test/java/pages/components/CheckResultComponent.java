@@ -21,9 +21,4 @@ public class CheckResultComponent {
         modalWindow.shouldHave(text(successFormText));
         tableResult.findBy(text(key)).shouldHave(text(value));
     }
-
-    public void checkResultSimpleForm(String key, String value){
-        outputSimpleResult.$(key).shouldHave(text(value));
-
-    }
 }
