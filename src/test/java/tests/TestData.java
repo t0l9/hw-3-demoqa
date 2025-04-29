@@ -2,7 +2,6 @@ package tests;
 
 import com.github.javafaker.Faker;
 
-import java.time.Month;
 import java.util.Locale;
 import java.util.Random;
 
@@ -16,7 +15,6 @@ public class TestData {
     static String[] citiesUttarPradesh = {"Agra", "Merrut", "Lucknow"};
     static String[] citiesHaryana = {"Karnal", "Panipat"};
     static String[] citiesRajasthan = {"Jaipur", "Jaiselmer"};
-
 
 
     static Faker fakerRu = new Faker(new Locale("ru"));
@@ -56,7 +54,6 @@ public class TestData {
         else
             return fakerRu.number().numberBetween(1,32);
     }
-
 
 
     public static String getRandomUserCity(String state, Random random){
