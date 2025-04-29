@@ -86,7 +86,7 @@ public class RegistrationPage {
 
     public RegistrationPage setHobbies(String value){
 
-        label.findBy(text(value)).click();
+        $$("label").findBy(text("Sports")).click();
 
         return this;
     }

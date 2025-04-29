@@ -4,9 +4,12 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.sleep;
 import static tests.TestData.*;
 
-public class AutomationSuccessPracticeFormPageObjects extends TestBase {
+public class test2 extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
@@ -14,20 +17,10 @@ public class AutomationSuccessPracticeFormPageObjects extends TestBase {
     void fillFormTest(){
 
         registrationPage.openPage()
-                .removebanners()
-                .setFirstName(firstName)
-                .setLastName(lastName)
-                .setEmail(email)
-                .setSex(userSex)
-                .setUserNumber(userNumber)
-                .setDate(userDateOfBirthday[0], userDateOfBirthday[1], userDateOfBirthday[2])
-                .setSubject(favoriteSubject)
-                .setHobbies(favoriteHobby)
-                .uploadPicture(imgPath)
-                .setAdress(userAddress)
-                .setState(userState)
-                .setCity(userCity)
-                .pressSubmit();
+                .removebanners();
+        $$("label").findBy(text("Sports")).click();
+        sleep(10000);
+
 
 
         registrationPage.checkResult("Label", "Values")
