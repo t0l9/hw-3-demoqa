@@ -35,7 +35,7 @@ public class JavaFakerTest extends TestBase {
                 .checkResult("Student Email", email)
                 .checkResult("Gender", userSex)
                 .checkResult("Mobile", userNumber)
-                .checkResult("Date of Birth", userDateOfBirthday[0] + " February," + userDateOfBirthday[2])
+                .checkResult("Date of Birth", userDateOfBirthday[0] + " " + months[randomMonth] + "," + userDateOfBirthday[2])
                 .checkResult("Subjects", favoriteSubject)
                 .checkResult("Hobbies", favoriteHobby)
                 .checkResult("Address", userAddress).checkResult("State and City", userState + " " + userCity);
