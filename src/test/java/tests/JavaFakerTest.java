@@ -4,12 +4,9 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.sleep;
 import static tests.TestData.*;
 
-public class test2 extends TestBase {
+public class JavaFakerTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
@@ -17,10 +14,20 @@ public class test2 extends TestBase {
     void fillFormTest(){
 
         registrationPage.openPage()
-                .removebanners();
-        $$("label").findBy(text("Sports")).click();
-        sleep(10000);
-
+                .removebanners()
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setSex(userSex)
+                .setUserNumber(userNumber)
+                .setDate(userDateOfBirthday[0], userDateOfBirthday[1], userDateOfBirthday[2])
+                .setSubject(favoriteSubject)
+                .setHobbies(favoriteHobby)
+                .uploadPicture(imgPath)
+                .setAdress(userAddress)
+                .setState(userState)
+                .setCity(userCity)
+                .pressSubmit();
 
 
         registrationPage.checkResult("Label", "Values")
