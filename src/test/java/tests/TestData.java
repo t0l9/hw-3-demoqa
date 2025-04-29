@@ -38,9 +38,9 @@ public class TestData {
             "July", "August", "September", "October", "November", "December"};
 
 
-    public static int randomMonth = random.nextInt(0,11);
+    public static int randomMonth = random.nextInt(0,12);
     public static int userDayOfBirthday = getUserDayOfBirthday(randomMonth);
-    public static int userYearOfBirthday = fakerRu.number().numberBetween(1950,2000);
+    public static int userYearOfBirthday = fakerRu.number().numberBetween(1950,2001);
 
     public static String[] userDateOfBirthday =
             {Integer.toString(userDayOfBirthday),
