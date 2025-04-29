@@ -11,7 +11,6 @@ public class CheckResultComponent {
 
     private final ElementsCollection tableResult = $$("table tr");
     private final SelenideElement modalWindow = $(".modal-content");
-    private final SelenideElement outputSimpleResult = $("#output");
 
 
     public void checkResultFullForm(String key, String value){
