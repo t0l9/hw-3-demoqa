@@ -17,8 +17,6 @@ public class JavaFakerTest extends TestBase {
     @Test
     void fillFormTest(){
 
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
         registrationPage.openPage()
                 .removebanners()
                 .setFirstName(firstName)

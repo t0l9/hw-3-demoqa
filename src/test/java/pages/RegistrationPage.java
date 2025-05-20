@@ -77,7 +77,7 @@ public class RegistrationPage {
         return this;
     }
 
-    @Step("Вводим дату рождения {day, month, year}")
+    @Step("Вводим дату рождения {day}.{month}.{year}")
     public RegistrationPage setDate(String day, String month, String year){
 
         calendarInput.click();
