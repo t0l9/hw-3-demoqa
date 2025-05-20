@@ -11,7 +11,6 @@ public class CheckResultComponent {
 
     private final ElementsCollection tableResult = $$("table tr");
     private final SelenideElement modalWindow = $(".modal-content");
-    private final SelenideElement outputSimpleResult = $("#output");
 
 
     public void checkResultFullForm(String key, String value){
@@ -20,10 +19,5 @@ public class CheckResultComponent {
 
         modalWindow.shouldHave(text(successFormText));
         tableResult.findBy(text(key)).shouldHave(text(value));
-    }
-
-    public void checkResultSimpleForm(String key, String value){
-        outputSimpleResult.$(key).shouldHave(text(value));
-
     }
 }

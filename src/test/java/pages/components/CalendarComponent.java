@@ -1,6 +1,6 @@
 package pages.components;
 
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
@@ -11,6 +11,8 @@ public class CalendarComponent {
 
         $(".react-datepicker__year-select").selectOptionByValue(year);
         $(".react-datepicker__month-select").selectOptionByValue(month);
-        $$(".react-datepicker__day").findBy(text(day)).click();
+        $$(".react-datepicker__day")
+                .filter(not(cssClass("react-datepicker__day--outside-month")))
+                .findBy(text(day)).click();
     }
 }

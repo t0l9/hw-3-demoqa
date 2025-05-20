@@ -17,7 +17,6 @@ public class TestData {
     static String[] citiesRajasthan = {"Jaipur", "Jaiselmer"};
 
 
-
     static Faker fakerRu = new Faker(new Locale("ru"));
     static Faker fakerEn = new Faker(new Locale("en"));
 
@@ -34,24 +33,37 @@ public class TestData {
     public static String userAddress = fakerRu.address().cityName();
     public static String userState = states[random.nextInt(states.length)];
     public static String userCity = getRandomUserCity(userState, random);
-    public static String[] userDateOfBirthday = {"14", "1", "1996"};
 
+    public static String[] months = {"January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"};
+
+
+    public static int randomMonth = random.nextInt(0,12);
+    public static int userDayOfBirthday = getUserDayOfBirthday(randomMonth);
+    public static int userYearOfBirthday = fakerRu.number().numberBetween(1950,2001);
+
+    public static String[] userDateOfBirthday =
+            {Integer.toString(userDayOfBirthday),
+                    Integer.toString(randomMonth),
+                    Integer.toString(userYearOfBirthday)};
+
+
+    public static int getUserDayOfBirthday(int number){
+        if (number != 1)
+            return fakerRu.number().numberBetween(1,29);
+        else
+            return fakerRu.number().numberBetween(1,32);
+    }
 
 
     public static String getRandomUserCity(String state, Random random){
 
-        switch (state) {
-            case "NCR":
-                return citiesNcr[random.nextInt(citiesNcr.length)];
-            case "Uttar Pradesh":
-                return citiesUttarPradesh[random.nextInt(citiesUttarPradesh.length)];
-            case "Haryana":
-                return citiesHaryana[random.nextInt(citiesHaryana.length)];
-            case "Rajasthan":
-                return citiesRajasthan[random.nextInt(citiesRajasthan.length)];
-            default:
-                return "Invalid state";
-
-        }
+        return switch (state) {
+            case "NCR" -> citiesNcr[random.nextInt(citiesNcr.length)];
+            case "Uttar Pradesh" -> citiesUttarPradesh[random.nextInt(citiesUttarPradesh.length)];
+            case "Haryana" -> citiesHaryana[random.nextInt(citiesHaryana.length)];
+            case "Rajasthan" -> citiesRajasthan[random.nextInt(citiesRajasthan.length)];
+            default -> "Invalid state";
+        };
     }
 }
