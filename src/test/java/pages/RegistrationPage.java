@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
 import pages.components.CheckResultComponent;
 
@@ -31,12 +32,14 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     CheckResultComponent checkResultComponent = new CheckResultComponent();
 
+    @Step("Открываем страницу в браузере")
     public RegistrationPage openPage(){
 
         open(pageUrl);
         return this;
     }
 
+    @Step("Удаляем рекламные баннеры")
     public RegistrationPage removebanners(){
 
         executeJavaScript("$('footer').remove();");
@@ -44,31 +47,37 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setFirstName(String value){
-        firstNameInput.setValue(value);
+    @Step("Вводим имя {name}")
+    public RegistrationPage setFirstName(String name){
+        firstNameInput.setValue(name);
         return this;
     }
 
+    @Step("Вводим фамилию {value}")
     public RegistrationPage setLastName(String value){
         lastNameInput.setValue(value);
         return this;
     }
 
+    @Step("Вводим email {value}")
     public RegistrationPage setEmail(String value){
         emailInput.setValue(value);
         return this;
     }
 
+    @Step("Выбираем пол {value}")
     public RegistrationPage setSex(String value){
         userSexs.findBy(text(value)).click();
         return this;
     }
 
+    @Step("Вводим номер телефона {value}")
     public RegistrationPage setUserNumber(String value){
         numberInput.setValue(value);
         return this;
     }
 
+    @Step("Вводим дату рождения {day, month, year}")
     public RegistrationPage setDate(String day, String month, String year){
 
         calendarInput.click();
@@ -77,6 +86,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Вводим subject {value}")
     public RegistrationPage setSubject(String value){
 
         subjectsInput.setValue(value).pressEnter();
@@ -84,6 +94,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Выбираем хобби {value}")
     public RegistrationPage setHobbies(String value){
 
         label.findBy(text(value)).click();
@@ -91,6 +102,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Загружаем картинку из {value}")
     public RegistrationPage uploadPicture(String value){
 
         uploadPicture.uploadFromClasspath(value);
@@ -98,6 +110,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Вводим адрес {value}")
     public RegistrationPage setAdress(String value){
 
         currentAddress.setValue(value);
@@ -105,7 +118,7 @@ public class RegistrationPage {
         return this;
     }
 
-
+    @Step("Выбираем state {value}")
     public RegistrationPage setState(String value){
 
         stateInput.click();
@@ -114,6 +127,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Выбираем city {value}")
     public RegistrationPage setCity(String value){
 
         cityInput.click();
@@ -122,6 +136,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Нажимаем на кнопку подтвердить")
     public RegistrationPage pressSubmit(){
 
         submitBt.click();
@@ -131,14 +146,11 @@ public class RegistrationPage {
 
 
 
+    @Step("Проверяем результат что {key} = {value}")
     public RegistrationPage checkResult(String key, String value){
 
         checkResultComponent.checkResultFullForm(key, value);
         return this;
     }
-
-
-
-
 
 }
