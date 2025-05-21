@@ -121,7 +121,7 @@ public class RegistrationPage {
     @Step("Выбираем state {value}")
     public RegistrationPage setState(String value){
 
-        stateInput.click();
+        stateInput.scrollIntoView(true).click();
         reactSelectStateInput.setValue(value).pressEnter();
 
         return this;
