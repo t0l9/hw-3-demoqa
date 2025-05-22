@@ -12,9 +12,9 @@ import java.util.Map;
 
 public class TestBase {
 
-    private static final String SELENOID_URL = System.getProperty("selenoid.url");
-    private static final String SELENOID_LOG = System.getProperty("selenoid.login");
-    private static final String SELENOID_PASS = System.getProperty("selenoid.password");
+    private static final String SELENOID_URL = System.getProperty("selenoid_url");
+    private static final String SELENOID_LOG = System.getProperty("selenoid_login");
+    private static final String SELENOID_PASS = System.getProperty("selenoid_password");
 
     @BeforeAll
     static void beforeAll(){

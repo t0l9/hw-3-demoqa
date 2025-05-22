@@ -15,7 +15,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
 
-    private static final String SELENOID_URL = System.getProperty("selenoid.url");
+    private static final String SELENOID_URL = System.getProperty("selenoid_url");
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
