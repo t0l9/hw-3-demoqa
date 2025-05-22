@@ -8,7 +8,7 @@ import pages.RegistrationPage;
 
 import static tests.TestData.*;
 
-
+@Tag("all_tests")
 public class JavaFakerTest extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
