@@ -18,9 +18,13 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll(){
-        Configuration.browserSize = "1920x1080";
+
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
+
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browser_version", "128.0");
+        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
 
         Configuration.remote = "https://" + SELENOID_LOG + ":" + SELENOID_PASS + "@" + SELENOID_URL + "/wd/hub";
 
