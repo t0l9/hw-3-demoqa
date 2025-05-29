@@ -23,7 +23,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
 
         Configuration.browser = System.getProperty("browser", "chrome");
-        //Configuration.browserVersion = System.getProperty("version", "127.0");
+        Configuration.browserVersion = System.getProperty("version", "127.0");
         Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
 
         Configuration.remote = "https://" + SELENOID_LOG + ":" + SELENOID_PASS + "@" + SELENOID_URL + "/wd/hub";
