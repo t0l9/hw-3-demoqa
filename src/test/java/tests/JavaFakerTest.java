@@ -49,7 +49,6 @@ public class JavaFakerTest extends TestBase {
                 .checkResult("Subjects", favoriteSubject)
                 .checkResult("Hobbies", favoriteHobby)
                 .checkResult("Address", userAddress).checkResult("State and City", userState + " " + userCity);
-
     }
 }
 

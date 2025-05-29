@@ -3,8 +3,7 @@ plugins {
     id("io.qameta.allure") version "2.11.2"
 }
 
-def allureVersion = "2.21.0",
-    selenideVersion = "6.14.0"
+def allureVersion = "2.21.0"
 
 allure {
     report {
@@ -28,7 +27,7 @@ dependencies {
     testImplementation(
             'org.aspectj:aspectjrt:1.9.22',
             'org.aspectj:aspectjweaver:1.9.22',
-            "com.codeborne:selenide:$selenideVersion",
+            "com.codeborne:selenide:7.9.3",
             "org.junit.jupiter:junit-jupiter:5.10.0",
             "org.slf4j:slf4j-simple:2.0.7",
             "com.github.javafaker:javafaker:1.0.2",
